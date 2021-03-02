@@ -3,7 +3,10 @@ import Stuff from "./components/Stuff";
 
 
 const App = () => (
-    <Stuff />
-  );
+  <div class="container">
+    <Stuff square = "false"/>
+  </div>
+);
+  
 
 export default App;
