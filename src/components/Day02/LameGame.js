@@ -9,7 +9,6 @@ class LameGame extends Component {
 
         this.state = {
             aim : props.aim,
-            clicked:false,
             start : 0,
             time: 0
         }
@@ -20,7 +19,6 @@ class LameGame extends Component {
 
         this.setState({
             start: startTime,
-            clicked: true
         })
 
     }
@@ -30,7 +28,7 @@ class LameGame extends Component {
         let { aim } = this.state;
         let { start } = this.state;
         let time = (endTime - start - (aim *1000)) / 1000;
-        console.log(time);
+
         this.setState({
             time : time
         })
@@ -39,13 +37,20 @@ class LameGame extends Component {
     render(){
 
         let { start } = this.state;
+        let { aim } = this.state;
+        let { time } = this.state;
 
         return (
             <>
                 <h1> Lame Game</h1>
 
                 {start === 0 ? <button type="button" className="btn btn-success" onClick = {this.startClick}>Start</button> 
-                : <button type="button" className="btn btn-warning" onClick = {this.endClick}>Now</button>
+                : time === 0 ? 
+                    <>
+                    <p> Wait {aim} seconds </p>
+                    <button type="button" className="btn btn-warning" onClick = {this.endClick}>Now</button>
+                </>
+                : time > 0 ? <p> {time}s Too slow! </p> : <p> {time}s Too fast! </p>
                 }
             </>
         )
