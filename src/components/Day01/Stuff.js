@@ -20,11 +20,11 @@ const Stuff = ( {square} ) => (
         
         <br></br>
         <h1>Paragraph</h1>
-        <Paragraph>Piracy Spanish Main marooned Blimey poop deck handsomely gaff pillage fore crack Jennys tea cup. Yard scurvy topsail fathom prow gibbet Pirate Round salmagundi hempen halter schooner. Pirate Round coxswain pinnace deadlights overhaul spyglass gibbet grapple gunwalls matey. </Paragraph>
+        <Paragraph></Paragraph>
         
         <br></br>
         <h1>Square</h1>
-        { square ? <Square colour = "blue"/> : null}
+        { square ? <Square/> : null}
         
         <br></br>
         <h1>People</h1>

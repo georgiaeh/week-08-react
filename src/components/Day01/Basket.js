@@ -5,7 +5,7 @@ const Basket = ( {items} ) => (
     items ? 
         (<ul className="list-group">
             { items.map( (item, index) => (
-                <BasketItem item = {item} />
+                <BasketItem item = {item} key = {index} />
             ))}
         </ul>) : 
         <p> Basket Empty</p>

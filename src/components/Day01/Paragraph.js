@@ -3,7 +3,7 @@ const Paragraph = ( {children} ) => (
 );
 
 Paragraph.defaultProps = {
-    message : "Hello, world!"
+    children : "Hello, world!"
 };
 
 export default Paragraph;
