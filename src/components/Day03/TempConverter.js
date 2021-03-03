@@ -38,11 +38,11 @@ class TempConverter extends Component {
                 <br></br>
                 <h1>Temperature Converter</h1>
                 <div className="form-group">
-                    <label for = "fahrenheit" >Fahrenheit</label>
+                    <label >Fahrenheit</label>
                     <input id = "fahrenheit" type = "number" className="form-control" onChange = {this.handleChangeFtoC} value = {this.state.f}/>
                 </div>
                 <div className="form-group">
-                    <label for = "celsius" >Celsius</label>
+                    <label >Celsius</label>
                     <input id="celsius" type = "number" className="form-control" onChange = {this.handleChangeCtoF} value = {this.state.c}/>
                 </div>
             </>

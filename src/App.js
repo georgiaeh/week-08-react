@@ -16,6 +16,7 @@ import TempConverter from './components/Day03/TempConverter';
 import List from "./components/Day03/List";
 import Adder from "./components/Day03/Adder";
 import Transform from "./components/Day03/Transform";
+import Form from "./components/Day03/Form";
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -45,6 +46,7 @@ const App = () => (
     <List />
     <Adder />
     <Transform transform = {x => x * x} />
+    <Form fields = { ["First Name", "Last Name", "Email" ] } />
   </div>
 );
   
