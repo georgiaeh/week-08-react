@@ -11,6 +11,7 @@ import Colours from "./components/Day02/Colours";
 import Die from "./components/Day02/Die";
 import LameGame from "./components/Day02/LameGame";
 import Length from "./components/Day03/Length";
+import PasswordStrength from "./components/Day03/PasswordStrength";
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -35,6 +36,7 @@ const App = () => (
     <Die sides = { 6 } />
     <LameGame aim = {10} />
     <Length />
+    <PasswordStrength />
   </div>
 );
   
