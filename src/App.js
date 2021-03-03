@@ -12,6 +12,9 @@ import Die from "./components/Day02/Die";
 import LameGame from "./components/Day02/LameGame";
 import Length from "./components/Day03/Length";
 import PasswordStrength from "./components/Day03/PasswordStrength";
+import TempConverter from './components/Day03/TempConverter';
+import List from "./components/Day03/List";
+import Adder from "./components/Day03/Adder";
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -37,6 +40,9 @@ const App = () => (
     <LameGame aim = {10} />
     <Length />
     <PasswordStrength />
+    <TempConverter />
+    <List />
+    <Adder />
   </div>
 );
   
