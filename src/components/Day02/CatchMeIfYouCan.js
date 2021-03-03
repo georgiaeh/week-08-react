@@ -1,8 +1,8 @@
 import { Component } from "react";
 
 class CatchMeIfYouCan extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.handleClick = this.handleClick.bind(this);
 
@@ -13,14 +13,14 @@ class CatchMeIfYouCan extends Component {
 
     handleClick() {
         let { top } = this.state;
-
+        let { jump } = this.props;
+        
         this.setState(
             {
-                top : top + 100
+                top : top + jump
             }
         )
     }
-
 
     render() {
 
