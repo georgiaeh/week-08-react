@@ -37,7 +37,7 @@ class Form extends Component {
                 <form>
                     {this.props.fields.map( (field, index) => {
                         return (
-                            <>
+                            <div key = {index}>
                                 <label >{field}</label>
                                 <input id={field}  
                                     type = "text"
@@ -45,7 +45,7 @@ class Form extends Component {
                                     onChange={this.handleChange}
                                     style={{ border: this.state.submitted && !this.state.hasOwnProperty(field) ? "2px solid red" : "" }}></input>
                                 <p>{ this.state.submitted && !this.state.hasOwnProperty(field) ? "This field is required" : "" }</p>
-                            </>
+                            </div>
                         )
                     })}
                     <br></br>

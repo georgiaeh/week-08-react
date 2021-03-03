@@ -17,6 +17,8 @@ import List from "./components/Day03/List";
 import Adder from "./components/Day03/Adder";
 import Transform from "./components/Day03/Transform";
 import Form from "./components/Day03/Form";
+import GodCounter from "./components/Day03/GodCounter";
+import TwoCounters from "./components/Day03/TwoCounters";
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -47,6 +49,8 @@ const App = () => (
     <Adder />
     <Transform transform = {x => x * x} />
     <Form fields = { ["First Name", "Last Name", "Email" ] } />
+    <GodCounter />
+    <TwoCounters />
   </div>
 );
   
