@@ -15,6 +15,7 @@ import PasswordStrength from "./components/Day03/PasswordStrength";
 import TempConverter from './components/Day03/TempConverter';
 import List from "./components/Day03/List";
 import Adder from "./components/Day03/Adder";
+import Transform from "./components/Day03/Transform";
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -43,6 +44,7 @@ const App = () => (
     <TempConverter />
     <List />
     <Adder />
+    <Transform transform = {x => x * x} />
   </div>
 );
   
