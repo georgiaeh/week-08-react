@@ -19,6 +19,7 @@ import Transform from "./components/Day03/Transform";
 import Form from "./components/Day03/Form";
 import GodCounter from "./components/Day03/GodCounter";
 import TwoCounters from "./components/Day03/TwoCounters";
+import LightBox from "./components/Day03/LightBox";
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -28,6 +29,13 @@ let colours = [
   "#009EAD",
   "#395967",
 ];
+
+let images = [
+  "https://images.unsplash.com/photo-1523766775147-152d0d6e2adb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80",
+  "https://images.unsplash.com/photo-1614599106944-35688ad5119a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+  "https://images.unsplash.com/photo-1614795049603-74ed8d9949d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+
+]
 
 const App = () => (
   <div className="container">
@@ -51,6 +59,9 @@ const App = () => (
     <Form fields = { ["First Name", "Last Name", "Email" ] } />
     <GodCounter />
     <TwoCounters />
+    <br></br>
+    <h1>LightBox</h1>
+    <LightBox src = { images }/>
   </div>
 );
   
