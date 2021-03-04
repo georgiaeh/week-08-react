@@ -21,6 +21,7 @@ import GodCounter from "./components/Day03/GodCounter";
 import TwoCounters from "./components/Day03/TwoCounters";
 import LightBox from "./components/Day03/LightBox";
 import Timer from "./components/Day03/Timer";
+import ThreeCounters from "./components/Day03/ThreeCounters";
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -64,6 +65,7 @@ const App = () => (
     <h1>LightBox</h1>
     <LightBox src = { images }/>
     <Timer start = { 10 }/>
+    <ThreeCounters />
   </div>
 );
   

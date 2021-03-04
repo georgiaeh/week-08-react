@@ -73,17 +73,17 @@ class LightBox extends Component {
 
         return (
             <>
-            <div class="row">
+            <div className="row">
                 {this.props.src.map( (image, i) => {
                     return (
-                    <figure style = {lightbox ? lightboxStyle :  {} } class="card">
+                    <figure key = {i} style = {lightbox ? lightboxStyle :  {} } className="card">
                         <img
                             className="card-img-top"
                             alt = "Spring flowers"
                             src={ image }
                             style = { lightbox ? imgLightboxStyle :  imgStyle}
                             onClick = {this.handleClick}
-                            key = {i}
+                            
                         />
                         </figure>)
                 })}
