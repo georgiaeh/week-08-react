@@ -1,4 +1,4 @@
-import Header from "./Header";
+
 import Paragraph from './Paragraph';
 import Square from './Square';
 import People from './People';
@@ -16,7 +16,7 @@ let items = [
 
 const Stuff = ( {square} ) => (
     <>
-        <Header>Hello there! </Header>
+        
         
         <br></br>
         <h1>Paragraph</h1>

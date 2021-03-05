@@ -29,13 +29,14 @@ class PasswordStrength extends Component {
         let inputStyle = {
             backgroundColor : color
         }
+        
         return (
             <>
                 <br></br>
                 <h1>Password Strength</h1>
                 <div className="form-group">
                     <label>Password Strength Test</label>
-                    <input className="form-control" onChange = {this.handleChange} style = {inputStyle}/>
+                    <input className="form-control" onChange = {this.handleChange} style = {inputStyle} value = {this.state.input}/>
                 </div>
             </>
             );

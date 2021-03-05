@@ -25,7 +25,7 @@ class Length extends Component {
                 <h1>Length Input</h1>
                 <div className="form-group">
                     <label>Length: {this.state.input.length}</label>
-                    <input className="form-control" onChange = {this.handleChange} />
+                    <input className="form-control" onChange = {this.handleChange} value={this.state.input} />
                 </div>
             </>
             );

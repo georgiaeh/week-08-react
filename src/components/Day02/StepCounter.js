@@ -16,11 +16,11 @@ class StepCounter extends Component {
         let { number } = this.state;
         let { max , step } = this.props;
 
-        number >= max ? this.setState({
+        number > parseInt(max)-parseInt(step) ? this.setState({
             number : number
             }) :
             this.setState({
-            number : number + step
+            number : number + parseInt(step)
             })
     }
 

@@ -1,4 +1,13 @@
 import './App.css';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+  } from "react-router-dom";
+
+import Header from "./components/Day01/Header";
+import Footer from "./components/Day04/Footer";
 import Stuff from "./components/Day01/Stuff";
 import Clicked from "./components/Day02/Clicked";
 import Square2 from "./components/Day02/Square2";
@@ -22,6 +31,8 @@ import TwoCounters from "./components/Day03/TwoCounters";
 import LightBox from "./components/Day03/LightBox";
 import Timer from "./components/Day03/Timer";
 import ThreeCounters from "./components/Day03/ThreeCounters";
+import Square from './components/Day01/Square';
+import FourOhFour from './components/Day04/FourOhFour';
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -40,33 +51,79 @@ let images = [
 ]
 
 const App = () => (
-  <div className="container">
-    <Stuff square = {true}/>
-    <Clicked />
-    <Square2 colour = "blue"/>
-    <ToggleText initial = "hello" alternate = "world" />
-    <Counter initial = {50} max = {100} />
-    <StepCounter max={ 100 } step={ 5 } />
-    <CatchMeIfYouCan jump={ 100 } />
-    <RollCall names = { names }/>
-    <Colours colours = { colours } />
-    <Die sides = { 6 } />
-    <LameGame aim = {10} />
-    <Length />
-    <PasswordStrength />
-    <TempConverter />
-    <List />
-    <Adder />
-    <Transform transform = {x => x * x} />
-    <Form fields = { ["First Name", "Last Name", "Email" ] } />
-    <GodCounter />
-    <TwoCounters />
-    <br></br>
-    <h1>LightBox</h1>
-    <LightBox src = { images }/>
-    <Timer start = { 10 }/>
-    <ThreeCounters />
-  </div>
+  <Router>
+    <div className="container">
+
+    <Header>Hello there! </Header>
+
+    <Switch >
+
+      <Route exact path="/">
+        <h1>Learning React</h1>
+        <p>Components that I built using React</p>
+        <p>React and I are becoming friends</p>
+      </Route>
+
+      <Route exact path="/noprops">
+        <Clicked /> 
+      </Route>
+
+      <Route exact path="/props">
+        <Stuff square = {true}/>
+        <Square2 colour = "blue"/> 
+        <ToggleText initial = "hello" alternate = "world" />
+        <RollCall names = { names }/>
+        <Colours colours = { colours } />
+      </Route>
+
+      <Route path="/square/:colour" render={ ({match}) => (
+        <Square colour = {match.params.colour}/> 
+        )} />
+
+      <Route path="/steps/:max/:step" render={ ({match}) => (
+        <StepCounter max={ match.params.max} step={ match.params.step } />
+      )} />
+      
+      <Route exact path="/otherstuff">
+        <br></br>
+        <h1>LightBox</h1>
+        <LightBox src = { images }/>
+        <Timer start = { 10 }/>
+      </Route>
+
+      <Route exact path="/forms">
+        <Length />
+        <PasswordStrength />
+        <TempConverter />
+        <List />
+        <Adder />
+        <Form fields = { ["First Name", "Last Name", "Email" ] } />
+        <Transform transform = {x => x * x} />
+      </Route>
+
+      <Route exact path="/counters">
+        <Counter initial = {50} max = {100} />
+        <StepCounter max={ 100 } step={ 5 } />
+        <GodCounter />
+        <TwoCounters />
+        <ThreeCounters />
+      </Route>
+
+      <Route exact path="/games">
+        <Die sides = { 6 } />
+        <LameGame aim = {10} />
+        <CatchMeIfYouCan jump={ 100 } />
+      </Route>
+
+      <FourOhFour />
+
+    </Switch>
+
+    <Footer />
+
+    </div>
+
+  </Router>
 );
   
 

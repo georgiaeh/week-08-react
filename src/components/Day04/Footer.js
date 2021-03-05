@@ -1,23 +1,12 @@
-// const Header = ( { children } ) => (
-//     <header className="jumbotron"> 
-//         <h1>{ children }</h1>
-//     </header>
-// );
-
-//Header as a class based component
-
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
-class Header extends Component{
+class Footer extends Component{
 
     render() {
-
-        let { children } = this.props;
         
         return (
-                <header className="jumbotron"> 
-                    <h1>{ children }</h1>
+                <footer className="footer"> 
                     <nav className = "navbar">
                         <Link to = "/">Home</Link>
                         <Link to = "/props">Stuff using props</Link>
@@ -27,10 +16,10 @@ class Header extends Component{
                         <Link to = "/forms">Things that are Forms</Link>
                         <Link to = "/games">Things that are Games</Link>
                     </nav>
-                </header>
+                </footer>
             )
     }
 
 }
 
-export default Header;
+export default Footer;
