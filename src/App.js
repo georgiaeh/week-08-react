@@ -38,6 +38,8 @@ import EvenClick from './components/Day05/EvenClick';
 import CountBy from './components/Day05/CountBy';
 import HideMe from './components/Day05/HideMe';
 import MinimumLength from './components/Day05/MinimumLength';
+import MyButton from './components/Day05/Button';
+import Progress from './components/Day05/Progress';
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -60,6 +62,9 @@ const App = () => (
     <div className="container">
 
     <Header>Hello there! </Header>
+
+    <MyButton />
+    <Progress />
 
     <Switch >
 

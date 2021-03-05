@@ -21,7 +21,7 @@ class Timer extends Component {
                 time: time - 1
             }) 
         } else {
-            this.componentWillUnmount();
+            clearInterval(this.intervalID); //if the component is still mounted when the timer reaches 0, clear the interval as it is no longer needed
         }
     }
 
@@ -32,6 +32,7 @@ class Timer extends Component {
 
     componentWillUnmount(){
         clearInterval(this.intervalID);
+        //if the timer is still running when the componenet is unmounted (e.g moving to a different page, page refresh) then clear the timer as it's no longer needed
         console.log("unmounted");
     }
 

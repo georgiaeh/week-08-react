@@ -1,6 +1,8 @@
 import { Component } from "react";
+import { ListGroup, Button, Form} from "react-bootstrap";
 
-class List extends Component {
+
+class NamesList extends Component {
     constructor() {
         super();
 
@@ -36,16 +38,16 @@ class List extends Component {
             <>
                 <br></br>
                 <h1>List</h1>
-                <div className="form-group">
-                    <label >Add to List</label>
-                    <input type = "text" className="form-control" onChange = {this.handleChange} value = {this.state.input}/>
-                    <button type="button" className="btn btn-primary" onClick = {this.handleClick}> Add</button>
-                </div>
-                <ul className = "list-group">
+                <Form.Group>
+                    <Form.Label >Add to List</Form.Label>
+                    <Form.Control type = "text" onChange = {this.handleChange} value = {this.state.input}/>
+                    <Button varaint="primary" onClick = {this.handleClick}> Add</Button>
+                </Form.Group>
+                <ListGroup>
                     { this.state.items.map( (value, index) => (
-                    <li className = "list-group-item" key={ index }>{ value }</li>
+                    <ListGroup.Item key={ index }>{ value }</ListGroup.Item>
                     ))}
-                </ul>
+                </ListGroup>
             </>
             );
 
@@ -53,4 +55,4 @@ class List extends Component {
 
 }
 
-export default List;
+export default NamesList;

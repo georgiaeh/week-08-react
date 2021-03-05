@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Form } from 'react-bootstrap';
 
 class PasswordStrength extends Component {
     constructor() {
@@ -34,10 +35,10 @@ class PasswordStrength extends Component {
             <>
                 <br></br>
                 <h1>Password Strength</h1>
-                <div className="form-group">
-                    <label>Password Strength Test</label>
-                    <input className="form-control" onChange = {this.handleChange} style = {inputStyle} value = {this.state.input}/>
-                </div>
+                <Form.Group>
+                    <Form.Label>Password Strength Test</Form.Label>
+                    <Form.Control onChange = {this.handleChange} style = {inputStyle} value = {this.state.input}/>
+                </Form.Group>
             </>
             );
 

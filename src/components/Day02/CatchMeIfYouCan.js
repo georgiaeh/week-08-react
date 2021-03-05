@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Button } from "react-bootstrap";
 
 class CatchMeIfYouCan extends Component {
     constructor(props){
@@ -30,7 +31,7 @@ class CatchMeIfYouCan extends Component {
             top : top
         }
 
-        return (<button type="button" className="btn btn-warning" onClick = {this.handleClick} style = {style} > Catch Me </button>)
+        return (<Button variant="warning" onClick = {this.handleClick} style = {style} > Catch Me </Button>)
     }
 }
 
