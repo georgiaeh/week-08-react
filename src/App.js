@@ -40,6 +40,7 @@ import HideMe from './components/Day05/HideMe';
 import MinimumLength from './components/Day05/MinimumLength';
 import MyButton from './components/Day05/Button';
 import Progress from './components/Day05/Progress';
+import LightsOut from './components/LightsOut/LightsOut'
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -63,15 +64,20 @@ const App = () => (
 
     <Header>Hello there! </Header>
 
-    <MyButton />
-    <Progress />
+    
 
     <Switch >
+
+      <Route exact path="/lightsout">
+        <LightsOut />
+      </Route>
 
       <Route exact path="/">
         <h1>Learning React</h1>
         <p>Components that I built using React</p>
         <p>React and I are becoming friends</p>
+        <MyButton />
+        <Progress />
       </Route>
 
       <Route exact path="/noprops">
