@@ -33,6 +33,11 @@ import Timer from "./components/Day03/Timer";
 import ThreeCounters from "./components/Day03/ThreeCounters";
 import Square from './components/Day01/Square';
 import FourOhFour from './components/Day04/FourOhFour';
+import Multiplier from './components/Day05/Multiplier';
+import EvenClick from './components/Day05/EvenClick';
+import CountBy from './components/Day05/CountBy';
+import HideMe from './components/Day05/HideMe';
+import MinimumLength from './components/Day05/MinimumLength';
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -114,6 +119,22 @@ const App = () => (
         <LameGame aim = {10} />
         <CatchMeIfYouCan jump={ 100 } />
       </Route>
+
+      <Route exact path="/quiz">
+        <Multiplier x={5} y={7}/>
+        <EvenClick />
+        <HideMe> Blah blah blah</HideMe>
+        <MinimumLength length = {30} />
+      </Route>
+
+      <Route path="/count-by/:step"  render={ ({match}) => (
+        <CountBy step = {match.params.step} /> )} />
+
+      <Route path="/minimum/:length"  render={ ({match}) => (
+        <MinimumLength length = {match.params.length} /> )} />
+
+      <Route path="/multiplier/:x/:y"  render={ ({match}) => (
+        <Multiplier x = {match.params.x} y = {match.params.y}/> )} />
 
       <FourOhFour />
 
