@@ -44,7 +44,7 @@ import LightsOut from './components/LightsOut/LightsOut'
 import LightsOut2 from './components/LightsOut/LightsOut2'
 import Squares from './components/Day06/Squares';
 import SignUp from './components/Day06/SignUp';
-
+import Max from './components/Day06/Max';
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -79,6 +79,7 @@ const App = () => (
       <Route exact path="/day06" >
         <Squares colour = "yellow" />
         <SignUp minLength = { 12 } />
+        <Max count = {[1, 2, 3, 5]}/>
       </Route>
 
       <Route exact path="/lightsout2">
