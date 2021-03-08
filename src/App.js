@@ -42,6 +42,9 @@ import MyButton from './components/Day05/Button';
 import Progress from './components/Day05/Progress';
 import LightsOut from './components/LightsOut/LightsOut'
 import LightsOut2 from './components/LightsOut/LightsOut2'
+import Squares from './components/Day06/Squares';
+import SignUp from './components/Day06/SignUp';
+
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -71,6 +74,11 @@ const App = () => (
 
       <Route exact path="/lightsout">
         <LightsOut />
+      </Route>
+
+      <Route exact path="/day06" >
+        <Squares colour = "yellow" />
+        <SignUp minLength = { 12 } />
       </Route>
 
       <Route exact path="/lightsout2">
