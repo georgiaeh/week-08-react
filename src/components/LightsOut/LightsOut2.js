@@ -1,9 +1,9 @@
 import { Component } from 'react';
 
 
-class LightsOut extends Component {
-    constructor(){
-        super();
+class LightsOut2 extends Component {
+    constructor(props){
+        super(props);
 
         this.handleClick = this.handleClick.bind(this);
         this.tick = this.tick.bind(this);
@@ -25,6 +25,7 @@ class LightsOut extends Component {
 
     handleClick(e){
         let id = e.currentTarget.id;
+        console.log(id);
         let { one, two, three, four, five, six, seven, eight, nine} = this.state;
 
         switch(id) {
@@ -127,4 +128,4 @@ class LightsOut extends Component {
     }
 }
 
-export default LightsOut;
+export default LightsOut2;

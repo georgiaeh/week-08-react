@@ -28,7 +28,7 @@ class HideMe extends Component {
         return (
             <>
                 <h1> Hide Me</h1>
-                <p onClick = {this.handleClick} style = {pStyle}> {this.props.children} </p>
+                <p onClick = {this.handleClick} style = {pStyle}> {this.state.clicked ? this.props.children : null} </p>
             </>
         )
     }
