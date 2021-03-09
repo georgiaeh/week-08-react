@@ -23,8 +23,7 @@ class SignUp extends Component
         let { password, confirm } = this.state;
         let { minLength } = this.props
         let valid = (password === confirm) 
-                    && (password.length >= minLength) 
-                    && (confirm.length >= minLength);
+                    && (password.length >= minLength);
         return(
             <>
             <h1>Sign Up</h1>
