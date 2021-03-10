@@ -45,6 +45,9 @@ import LightsOut2 from './components/LightsOut/LightsOut2'
 import Squares from './components/Day06/Squares';
 import SignUp from './components/Day06/SignUp';
 import Max from './components/Day06/Max';
+import Articles from './components/Day07/Articles';
+import Article from './components/Day07/Article';
+import CreateArticle from './components/Day07/CreateArticle'
 
 let names = ["Taylor", "Estee", "Alana", "Danielle"]
 let colours = [
@@ -66,15 +69,27 @@ const App = () => (
   <Router>
     <div className="container">
 
-    <Header>Hello there! </Header>
-
+    {/* <Header>Hello there! </Header> */}
     
-
     <Switch >
 
       <Route exact path="/lightsout">
         <LightsOut />
       </Route>
+
+      <Route exact path="/news">
+        <Articles />
+      </Route>
+
+      <Route exact path="/news/create">
+        <CreateArticle />
+      </Route>
+
+      <Route path="/news/:id" render={ ({ match} ) => (
+        <Article id = {match.params.id} />
+      ) } />
+
+      
 
       <Route exact path="/day06" >
         <Squares colour = "yellow" />
@@ -165,7 +180,7 @@ const App = () => (
 
     </Switch>
 
-    <Footer />
+    {/* <Footer /> */}
 
     </div>
 

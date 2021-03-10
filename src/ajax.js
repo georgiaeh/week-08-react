@@ -1,4 +1,4 @@
-import axios from "./axios";
+// import axios from "./axios";
 
 // //1. Use console.log() to output an array with all of your article data from the API
 // axios.get("/articles").then( (data) => {
