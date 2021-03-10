@@ -5,7 +5,6 @@ import axios from "../../axios";
 class Articles extends Component {
     constructor(){
         super()
-
         this.state = {
             articles: [],
             loaded: false
@@ -13,18 +12,21 @@ class Articles extends Component {
     }
 
     componentDidMount(){
+        //use get request to get all articles
+
         axios.get("/articles").then( (data) => {
             this.setState({
                 articles: data.data.data,
                 loaded: true
             })
-            console.log(data)
         })
     }
 
     render(){
 
         let { articles, loaded } = this.state;
+
+        //when articles data has been loaded, display article title and tags
 
         return !loaded ? <p> Loading .... </p> :
             (
@@ -35,10 +37,9 @@ class Articles extends Component {
                         return (
                         <ListGroup.Item key={index}> 
                             <a href={`/news/${article.id}`}>{article.title}</a>
-                            {article.tags.map( (tag, index) => <Badge variant="light" key={index} className="float-right">{tag}</Badge>)}
+                            {article.tags.map( tag => <Badge variant="light" key={tag} className="float-right">{tag}</Badge>)}
                         </ListGroup.Item>
                         )
-                        
                     })}
                     </ListGroup>
                     

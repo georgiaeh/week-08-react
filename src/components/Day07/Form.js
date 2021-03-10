@@ -14,6 +14,9 @@ class ArticleForm extends Component {
     }
 
     handleChange(e) {
+        //when input field changes, get the id (which is the field name)
+        //create a new property in the state if it does not exist
+        //or update an existing property
 
         let field = e.currentTarget.id;
 
@@ -24,14 +27,30 @@ class ArticleForm extends Component {
     }
 
     handleClick(e){ 
+
+        //prevent default behaviour of submit button
         e.preventDefault();
-        this.setState({
-            submitted: true
+
+
+        //checks that the state has a property for every field in the prop fields array
+        //and that the value for that property is not empty -> all fields completed
+        let canSubmit = this.props.fields.every( (field) => {
+            if(this.state.hasOwnProperty(field)){
+                return this.state[field].length > 0
+            } else {
+                return false
+            }
         })
 
-        let { handleSubmit } = this.props;
+        //if all fields have been filled out and are not empty,
+        //use the handleSubmit function passes in props to
+        //pass data up to parent component
 
-        handleSubmit({...this.state, submitted: true});
+        let { handleSubmit } = this.props;
+        if(canSubmit){
+            handleSubmit({...this.state, submitted: true});
+        }
+        
     }
 
     render() {
@@ -43,7 +62,8 @@ class ArticleForm extends Component {
                         return (
                             <div key = {index}>
                                 <Form.Label >{field}</Form.Label>
-                                <Form.Control id={field}  
+                                <Form.Control 
+                                    id={field}  
                                     type = "text"
                                     className="form-control" 
                                     onChange={this.handleChange}
